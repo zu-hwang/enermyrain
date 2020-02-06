@@ -31,7 +31,7 @@ function paintHero() {
 }
 
 
-// 1초에 한번씩 새로운 캐릭터를 그리도록.
+// 1초에 한번씩 새로운 캐릭터를 그리도록.w
 setInterval(paintHero, 1000);
 
 function saveKey(event) {

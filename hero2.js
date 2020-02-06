@@ -75,7 +75,7 @@ function handleKeyEvent(event) {
     // console.log('왼쪽으로 갈꺼얍');
     leftSight(); // 왼쪽 보는 모습 CSS 적용
     moveLeft();
-    window.addEventListener('keyup', frontSight); // 셋타입아웃으로 앞면보게 했는데 그럼 버퍼처럼 덜덜거림. 이벤트로 주는 것이 깔꾸미
+    window.addEventListener('keyup', frontSight); // 셋타입아웃으로 앞면보게 했는데 그럼 버퍼처럼 덜덜거림.
 
   } else if (curKey === 39) {
     // console.log('오른쪼오오오오옥!');
