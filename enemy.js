@@ -1,3 +1,4 @@
+import { Http2ServerResponse } from "http2";
 
 
 // 고스트 메이커!

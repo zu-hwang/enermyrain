@@ -58,3 +58,26 @@ class Ghost {
 
 
 }
+
+
+this.selector[count].style.top = top+'px';
+
+:에러 
+cannot road property 'style' of undefined.
+
+
+
+이럴때 콘솔로그는 오똫게 찍을뀨
+console.log(this.selector, count); // 위 두가지를 체크해야한당!
+this.selector[count].style.top = top+'px';
+
+:에러 
+cannot road property 'style' of undefined.
+
+
+(이 변수)한테 (이 펑션) 없는 대? 라는 에러가 뜨면. 
+(이 변수)의 자료형을 체크하기, 해당 자료형에 따라 쓸수 있는 메서드가 다름! 
+
+
+
+월요일 까지. 리액트 사전학습 ! 2일 정도 잡긩!
