@@ -37,3 +37,5 @@ class Enemy {
 
 
 setInterval(new Enermy, 1000 / 60);
+
+
