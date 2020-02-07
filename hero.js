@@ -1,46 +1,99 @@
-// 영웅 생성자 만들기.
-//   생성자 > left 위치, front sight CSS, left sight CSS, right sight css
-
-
-// 셋 인터벌 > 초수마다 소환...
-
+// 요소가져오기
 const hero = document.querySelector('.hero');
-let nowLeft;
-let movePx
+// console.dir(hero);
 
 class Hero {
-  constructor(nowLeft, arrowKey, ) {
-  }
 
-  // 죽으면실행() {
-  // }
-
-  이동할때실행() {
-    if (왼쪽일때) {
-      css list 수정
-      css left 수정
-
-    } else if (오른쪽일때) {
-      css list 수정
-      css left 수정
-    };
-  }
-}
-
-function paintHero() {
 }
 
 
-// 1초에 한번씩 새로운 캐릭터를 그리도록.w
-setInterval(paintHero, 1000);
+// function handleMoveHero(event) {
+//   console.dir(event);
+// }
 
-function saveKey(event) {
-  if (event.keyCode === 37) {
-    return movePx = -1;
 
-  } else if (event.keyCode === 39) {
-    return movePx = 1;
+// 히어로 방향 > 왼쪽보는 함수
+function leftSight() {
+  // hero.classList.remove('front');
+  hero.classList.remove('right');
+  hero.classList.add('left');
+}
+
+// 히어로 방향 > 오른쪽보는 함수
+function rightSight() {
+  // hero.classList.remove('front');
+  hero.classList.remove('left');
+  hero.classList.add('right');
+}
+
+// 히어로 방향 > 정면보는 함수
+function frontSight() {
+  hero.classList.remove('right');
+  hero.classList.remove('left');
+  hero.classList.add('front');
+}
+
+function moveLeft() {
+  let curX = parseInt(getComputedStyle(hero).left);
+  let newX;
+  // console.log(curX);
+  if (curX < 10) {
+    newX = 0 + 'px';
+  } else {
+    // curX--;
+    curX -= 10;
+    newX = curX + 'px';
+  }
+  // console.log(newX);
+  hero.style.left = newX;
+  // console.log(parseInt(getComputedStyle(hero).left));
+}
+
+function moveRight() {
+  let curX = parseInt(getComputedStyle(hero).left);
+  // console.log('오른쪽', curX);
+  let newX;
+  if (curX > 768) {
+    newX = 778 + 'px';
+  } else {
+    curX += 10;
+    newX = curX + 'px';
+  }
+  // console.log(newX);
+  hero.style.left = newX;
+  // console.log(parseInt(getComputedStyle(hero).left));
+}
+
+
+// 키 이벤트가 좌우 방향키 인지 확인
+function handleKeyEvent(event) {
+  // console.dir(event);
+  // 이벤트 키코드 가져오기
+  const curKey = event.keyCode;
+  // 키코드에 따른 함수 실행
+  if (curKey === 37) {
+    // console.log('왼쪽으로 갈꺼얍');
+    leftSight(); // 왼쪽 보는 모습 CSS 적용
+    moveLeft();
+    window.addEventListener('keyup', frontSight); // 셋타입아웃으로 앞면보게 했는데 그럼 버퍼처럼 덜덜거림.
+
+  } else if (curKey === 39) {
+    // console.log('오른쪼오오오오옥!');
+    rightSight(); // 오른쪽 보는 모습 CSS 적용
+    moveRight();
+    // setTimeout((hero) => {
+    //   frontSight()
+    // }, 1000);
+    window.addEventListener('keyup', frontSight);
+
+  } else if (curKey === 38 || curKey === 40) {
+    // console.log('정면보기!');
+    frontSight(); // 오른쪽 보는 모습 CSS 적용
   }
 }
 
-window.addEventListener('keydown', saveKey);
+
+window.addEventListener('keydown', handleKeyEvent);
+
+
+
