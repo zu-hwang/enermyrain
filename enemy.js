@@ -5,14 +5,18 @@ let nowY;
 let nowX;
 
 
+
+
 function removeGhost() {
   ghost.parentNode.removeChild(ghost);
 }
+
 
 function deadGhost() {
   ghost.classList.remove('alive');
   ghost.classList.add('dead');
 }
+
 
 function rainGhost() {
   const curY = parseInt(window.getComputedStyle(ghost).top);
