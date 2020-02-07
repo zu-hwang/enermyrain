@@ -24,7 +24,7 @@ class Enermy {
 
   removeGhost = () => {
     // console.log('귀신 지우기 실행');
-    this.ghost.parentNode.removeChild(this.ghost);
+    // this.ghost.parentNode.removeChild(this.ghost);
     delete this.ghost;
   }
   deadGhost = () => {
