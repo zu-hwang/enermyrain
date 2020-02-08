@@ -1,5 +1,11 @@
 let speed = 1;
-const soundEffect = new Audio('audio/dying.wav');
+let interval = 3;
+let killCount = 0;
+let lifeCount = 5;
+
+document.querySelector('.kill-count').innerHTML = killCount;
+document.querySelector('.life-count').innerHTML = lifeCount;
+
 
 class Enermy {
   constructor() {
@@ -24,8 +30,8 @@ class Enermy {
 
   removeGhost = () => {
     // console.log('귀신 지우기 실행');
-    // this.ghost.parentNode.removeChild(this.ghost);
-    delete this.ghost;
+    this.ghost.parentNode.removeChild(this.ghost);
+    // delete this.ghost;
   }
   deadGhost = () => {
     this.ghost.classList.add('dead');
@@ -34,7 +40,7 @@ class Enermy {
 
   rainGhost = () => {
     this.curY = parseInt(window.getComputedStyle(this.ghost).top); //숫자형
-    this.nowY = this.curY + 1; // 숫자형
+    this.nowY = this.curY + speed; // 숫자형
     this.nowX = parseInt(getComputedStyle(this.ghost).left); // 숫자형 
     this.ghostLeft = parseInt(getComputedStyle(this.ghost).left); // 숫자
     heroLeft = parseInt(getComputedStyle(hero).left); // 숫자
@@ -67,24 +73,34 @@ class Enermy {
     }
 
     if (this.nowY + 53 > heroTop && this.nowX < heroLeft + heroWidth && this.nowX > heroLeft - heroWidth) {
-      console.log('고스트 죽이기');
       soundEffect.play();
       killCount++;
+      console.log('고스트 죽이기', killCount);
+
       document.querySelector('.kill-count').innerHTML = killCount;
-      // if (KillCount % 10 === 0) {
-      //   console.log('레벨업!')
-      //   speed -= 0.1;
-      //   console.log('스피드 업!', speed)
-      // }
       this.deadGhost();
       clearInterval(this.id);
       setTimeout(this.removeGhost, 1000); // 히어로랑 닿았을때 죽이고 지우기
+      if (killCount % 3 === 0) {
+        console.log('레벨업!')
+        if (interval >= 1) {
+          interval -= 0.5;
+        }
+        speed += 0.3;
+        console.log('스피드 업!', speed, interval)
+        levelUp.classList.remove('hide');
+        levelUp.classList.add('show');
+        setTimeout(() => {
+          levelUp.classList.remove('show');
+          levelUp.classList.add('hide');
+        }, 1000);
+      }
     }
 
   }
 }
 
-// 1초에 한번씩 생성!
+// 몇초 에 한번씩 생성!
 setInterval(() => {
   return new Enermy();
-}, 1000 * speed);
+}, 1000 * interval); 

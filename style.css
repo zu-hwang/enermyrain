@@ -2,6 +2,8 @@
   /* background: #fafafa; */
   padding : 0;
   margin: 0;
+  font-family: monospace;
+  font-size: 1.05em;
 }
 
 html, body {
@@ -15,7 +17,7 @@ align-items: center;
 .container {
   width: 800px;
   margin: 0 auto;
-  background-color: tomato;
+  background-color: yellowgreen;
   position: relative;
   overflow: hidden;
 }
@@ -37,6 +39,21 @@ align-items: center;
   opacity: 0.5;
   font-size: 80px;
   text-align: center;
+  line-height: 7.3;
+}
+.hide {
+display: none;
+}
+.show {
+  display: block;
+}
+.level-up {
+  position : absolute;
+  text-align: center;
+  font-size: 50px;
+  font-weight: bold;
+  top : 10px;
+  left : 270px;
 }
 
 

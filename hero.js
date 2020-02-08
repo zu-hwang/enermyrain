@@ -37,11 +37,11 @@ function moveLeft() {
   let curX = parseInt(getComputedStyle(hero).left);
   let newX;
   // console.log(curX);
-  if (curX < 10) {
+  if (curX < 20) {
     newX = 0 + 'px';
   } else {
     // curX--;
-    curX -= 10;
+    curX -= 20;
     newX = curX + 'px';
   }
   // console.log(newX);
@@ -53,10 +53,10 @@ function moveRight() {
   let curX = parseInt(getComputedStyle(hero).left);
   // console.log('오른쪽', curX);
   let newX;
-  if (curX > 768) {
-    newX = 778 + 'px';
+  if (curX > 758) {
+    newX = 765 + 'px';
   } else {
-    curX += 10;
+    curX += 20;
     newX = curX + 'px';
   }
   // console.log(newX);
