@@ -1,46 +1,42 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>GAME : ENERMY RAIN!</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Nanum+Gothic:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>GAME : ENERMY RAIN!</title>
-  <link href="style.css" rel="stylesheet" type="text/css" />
-</head>
-
-<body>
-
-  <!-- 이미지너어졍 -->
-  <div class="container">
-
-    <div class="bg">
-      <div class='counter'>
-        <div>
-          <span>kill count : </span>
-          <span class='kill-count'></span>
-        </div>
-        <div>
-          <span>life count : </span>
-          <span class='life-count'></span>
+  <body>
+    <!-- 이미지너어졍 -->
+    <div class="container">
+      <div class="bg">
+        <div class="counter">
+          <div>
+            <span>kill count : </span>
+            <span class="kill-count"></span>
+          </div>
+          <div>
+            <span>life count : </span>
+            <span class="life-count"></span>
+          </div>
         </div>
       </div>
-    </div>
-    <div class='level-up hide'>LEVEL UP</div>
-    <!-- 히어로 -->
-    <div class='hero front'>
-    </div>
+      <div class="level-up hide">LEVEL UP</div>
+      <!-- 히어로 -->
+      <div class="hero front"></div>
 
-    <!-- 고스트 -->
-    <!-- <div class="ghost alive">
+      <!-- 고스트 -->
+      <!-- <div class="ghost alive">
     </div> -->
-  </div>
+    </div>
 
-
-
-
-  <script src="hero.js"></script>
-  <script src="enemy.js"></script>
-  <script src="init.js"></script>
-</body>
-
+    <script src="hero.js"></script>
+    <script src="enemy.js"></script>
+    <script src="init.js"></script>
+  </body>
 </html>
