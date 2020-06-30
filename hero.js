@@ -81,7 +81,7 @@ function handleKeyEvent(event) {
     // console.log('오른쪼오오오오옥!');
     rightSight(); // 오른쪽 보는 모습 CSS 적용
     moveRight();
-    // setTimeout((hero) => {
+    // setTimeout((hero) => {ㄴ
     //   frontSight()
     // }, 1000);
     window.addEventListener('keyup', frontSight);
