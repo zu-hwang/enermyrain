@@ -1,6 +1,7 @@
 # Enermy-rain web game
 
 [![enermy-rain-snapshot](https://i.ibb.co/0sy8j1g/enemyrain-snap.jpg)](https://www.youtube.com/embed/u4XmOFMfo5M)
+> 이미지를 클릭하면 게임 실행영상 youtube로 이동합니다.
 
 ## "비처럼 떨어지는 유령을 잡아라!"
 
