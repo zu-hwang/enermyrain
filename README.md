@@ -1,11 +1,12 @@
 # Enermy-rain web game
 
-![enermy-rain-snapshot](https://i.ibb.co/jy0vYmS/enermy-rain.png)
+[![enermy-rain-snapshot](https://i.ibb.co/0sy8j1g/enemyrain-snap.jpg)](https://www.youtube.com/embed/u4XmOFMfo5M)
 
 ## "비처럼 떨어지는 유령을 잡아라!"
 
-- 바닐라 자바스크립트 웹게임 구현
-- `<`, `>` 방향키 조작
+- HTML/CSS
+- Vanilla Javascript
+- `<`, `>` 방향키 조작 웹게임
 - 유령 3마리 잡으면 '**LEVEL UP & SPEED UP**'
 - 유령을 1마리 놓칠때 마다 **LIFE-1**
 
